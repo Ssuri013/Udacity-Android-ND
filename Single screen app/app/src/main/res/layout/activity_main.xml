@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="0dp"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="0dp"
+    android:orientation="vertical"
+    tools:context="com.shubham013.bakchood.MainActivity"
+    android:background="#CFD8DC"
+>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+
+        android:src="@drawable/logo"/>
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingTop="16dp"
+        android:textSize="20sp"
+        android:textStyle="bold|normal"
+        android:text="AIB: All India Bakchood"
+        android:typeface="serif"
+        android:textColor="@android:color/black"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="10dp"
+        android:paddingLeft="16dp">
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/marker48"
+            android:id="@+id/imageButton" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingLeft="6dp"
+            style="@style/mytext"
+            android:text="https://www.youtube.com/user/allindiabakchod"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingLeft="16dp">
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:srcCompat="@drawable/heart48"
+            android:paddingLeft="16dp"
+            android:id="@+id/imageView" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingTop="10dp"
+            android:paddingLeft="16dp"
+            android:text="2M Subscribers"
+            style="@style/mytext"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingLeft="16dp">
+
+        <ImageView
+
+            android:src="@drawable/home"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+
+            android:paddingLeft="16dp"/>
+        <TextView
+            style="@style/mytext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:text="Gursimran Khamba, Tanmay Bhat, Rohan Joshi and Ashish Shakya"/>
+    </LinearLayout>
+
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="16dp"
+    android:textSize="13sp"
+    android:text="All India Bakchod usually abbreviated and referred to as AIB is an Indian comedy group. The group maintains a YouTube channel [1] that shows their comedy sketches and parodies on topics such as politics, society, and the Hindi film industry, and much of their reputation was founded on their online presence."
+    android:textAlignment="viewStart" />
+</LinearLayout>

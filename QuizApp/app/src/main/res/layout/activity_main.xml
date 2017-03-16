@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.shubham.quizapp.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:gravity="center"
+            android:text="Android Quizer"
+            android:textColor="@android:color/black"
+            android:textSize="26sp"/>
+
+        <LinearLayout
+            android:id="@+id/question_1_container"
+            style="@style/que_container">
+
+            <TextView
+                style="@style/que"
+                android:text="Name of latest version of android is:"
+                />
+
+            <EditText
+                android:id="@+id/name"
+                style="@style/que"
+                android:backgroundTint="@android:color/holo_blue_bright"
+                android:maxLines="1"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/que_container"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+            <requestFocus/>
+            <TextView
+                style="@style/que"
+                android:text="Which layout support's overlapping:"/>
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:id="@+id/relative"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="RelativeLayout"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="LinearLayout"/>
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/que_container">
+            <TextView
+                style="@style/que"
+                android:text="Width of a view can be given in"/>
+            <CheckBox android:id="@+id/checkbox_dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="dp"
+                />
+            <CheckBox android:id="@+id/checkbox_sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="sp"
+                />
+            <CheckBox android:id="@+id/checkbox_wrap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="wrap_content"
+                />
+            <CheckBox android:id="@+id/checkbox_match"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="match_parent"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/que_container"
+            >
+            <requestFocus/>
+            <TextView
+                style="@style/que"
+                android:text="return type of findViewById() is:"/>
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="int"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Buttton"/>
+
+                <RadioButton
+                    android:id="@+id/view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="View"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ID"/>
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:onClick="checkAnswers"
+            android:text="Submit"/>
+
+=
+    </LinearLayout>
+</ScrollView>

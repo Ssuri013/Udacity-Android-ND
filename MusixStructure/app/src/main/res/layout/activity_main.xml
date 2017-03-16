@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.shubham.musixstructure.MainActivity"
+    android:background="#b0bec5">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Retro"
+        android:id="@+id/retro"
+        style="@style/textViewAll"
+        android:background="#f44336"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pop"
+        android:id="@+id/pop"
+        android:background="#03a9f4"
+        style="@style/textViewAll"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Display genre available in app"
+        android:layout_weight="1"
+        android:layout_gravity="bottom"
+        android:gravity="bottom|center"
+        android:background="#757575"
+        android:paddingBottom="16dp"
+        />
+</LinearLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backlake"
+    android:orientation="vertical"
+    tools:context="com.shubh.android.ghoomoghumao.MainActivity">
+
+    <TextView
+        android:id="@+id/weekend_gateways"
+        style="@style/CategoryStyle"
+        android:background="#22555555"
+        android:text="@string/weekend_gateways" />
+
+    <TextView
+        android:id="@+id/travel_guides"
+        style="@style/CategoryStyle"
+        android:background="#22555555"
+        android:text="@string/travel_guides" />
+
+
+    <TextView
+        android:id="@+id/hotels"
+        style="@style/CategoryStyle"
+        android:background="#22555555"
+        android:text="@string/hotels" />
+
+    <TextView
+        android:id="@+id/food_n_drink"
+        style="@style/CategoryStyle"
+        android:background="#22555555"
+        android:text="@string/food_n_drink" />
+
+
+</LinearLayout>

@@ -1,0 +1,62 @@
+<resources>
+    <string name="app_name">Ghoomo Ghumao</string>
+
+    <string name="travel_guides">Travel Guides</string>
+    <string name="food_n_drink">Food And Drinks</string>
+    <string name="hotels">Hotels</string>
+    <string name="weekend_gateways">Weekend Gateways</string>
+
+    <string name="food_one">Girl in The Cafe!</string>
+    <string name="food_two">F Cafe</string>
+    <string name="food_three">The Back Room</string>
+    <string name="food_four">Uncle Jack\'s</string>
+    <string name="food_five">Caked</string>
+
+    <string name="loc_one_food">Sector 17</string>
+    <string name="loc_two_food">Sector 26</string>
+    <string name="loc_three_food">Sector 34</string>
+    <string name="loc_four_food">Sector 8</string>
+    <string name="loc_five_food">Manimajra</string>
+
+    <string name="hotel_one">JW Marriott Hotel</string>
+    <string name="hotel_two">The Lalit</string>
+    <string name="hotel_three">Hyatt Regency</string>
+    <string name="hotel_four">The Toy Hotel</string>
+    <string name="hotel_five">Hotel Turquoise</string>
+
+    <string name="loc_one_hotel">Dakshin Marg</string>
+    <string name="loc_two_hotel">Rajiv Gandhi Technology Park</string>
+    <string name="loc_three_hotel">178 Industrial And Business Park</string>
+    <string name="loc_four_hotel">Sco 165-167</string>
+    <string name="loc_five_hotel">29/7 Industrial and Business Park</string>
+
+    <string name="tg_one">Sukhna Lake</string>
+    <string name="tg_two">Rock Garden</string>
+    <string name="tg_three">Rose Garden</string>
+    <string name="tg_four">Chattbir Zoo</string>
+    <string name="tg_five">Japanese Garden</string>
+
+    <string name="loc_one_tg">Sector 1</string>
+    <string name="loc_two_tg">Sector 1</string>
+    <string name="loc_three_tg">Phase 3B-1, Sector 60</string>
+    <string name="loc_four_tg">ChattBir Zoo road, Ajit Singh Nagar</string>
+    <string name="loc_five_tg">Sector 31-A</string>
+
+    <string name="wg_one">Morni Hills</string>
+    <string name="wg_two">Timber Trail</string>
+    <string name="wg_three">Barog</string>
+    <string name="wg_four">Solan</string>
+    <string name="wg_five">Fun City Water Park</string>
+
+    <string name="loc_one_wg">45 Kms. from Chandigarh-Panchkula</string>
+    <string name="loc_two_wg">Parwanoo</string>
+    <string name="loc_three_wg">Shimla-Kalka Highway</string>
+    <string name="loc_four_wg">Midway between Shimla and Kalka</string>
+    <string name="loc_five_wg">NH-72, Near Ramgarh</string>
+
+
+
+
+
+
+</resources>
