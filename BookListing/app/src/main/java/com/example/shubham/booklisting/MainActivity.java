@@ -1,6 +1,8 @@
 package com.example.shubham.booklisting;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.ConnectivityManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -17,6 +19,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -75,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
                 JSONObject tem = arr.getJSONObject(i);
                 JSONObject temp = tem.getJSONObject("volumeInfo");
                 JSONArray aut = temp.optJSONArray("authors");
+                JSONObject im = temp.getJSONObject("imageLinks");
                String authors="";
                 if(aut ==null){
                     authors =" ";
@@ -84,10 +90,16 @@ public class MainActivity extends AppCompatActivity {
                         authors = authors + " " + aut.getString(j);
                     }
                 }
-                books.add(new BooksInfo(temp.getString("title"), authors ));
+                String str1 = im.getString("smallThumbnail");
+                URL url = new URL(str1);
+                books.add(new BooksInfo(temp.getString("title"), authors,
+                        BitmapFactory.decodeStream(url.openConnection().getInputStream())));
 
+            }}
+            catch(IOException err){
+                Log.e(LOG_TAG,"ioexception");
             }
-        } catch (final JSONException e) {
+         catch (final JSONException e) {
             Log.e(LOG_TAG, "error in JSON parsing");
         }
         final BooksAdapter adapter = new BooksAdapter(this, books);
@@ -104,9 +116,24 @@ public class MainActivity extends AppCompatActivity {
             return result;
         }
 
+
         @Override
         protected void onPostExecute(String str) {
             updateUI(str);
         }
     }
 }
+
+/*class backgroundWork2 extends AsyncTask<String, Void , Bitmap> {
+    @Override
+    protected String doInBackground(String... strings) {
+        String result = com.example.shubham.booklisting.Utils.fetchEarthquakeData(strings[0]);
+        return result;
+    }
+
+    @Override
+    protected void onPostExecute(String str) {
+        updateUI(str);
+    }
+}
+}*/

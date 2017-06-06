@@ -63,6 +63,16 @@ public class MainActivity extends AppCompatActivity {
         finally {
             cursor.close();
         }
+
+        HabitDBHelper helper = new HabitDBHelper(this);
+
+        SQLiteDatabase db = helper.getReadableDatabase();
+
+
+        db.insert();
+        db.query();
+
+
     }
 
 }

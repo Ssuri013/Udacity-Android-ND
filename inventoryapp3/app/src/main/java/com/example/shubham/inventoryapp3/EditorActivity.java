@@ -20,6 +20,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.shubham.inventoryapp3.data.OrderContract;
 
@@ -81,29 +82,31 @@ public class EditorActivity extends AppCompatActivity {
             String sName = cursor.getString(cursor.getColumnIndex(OrderContract.OrderEntry.COLUMN_NAME));
             String sEmail = cursor.getString(cursor.getColumnIndex(OrderContract.OrderEntry.COLUMN_PRICE));
             String sPhone =  cursor.getString(cursor.getColumnIndex(OrderContract.OrderEntry.COLUMN_QUANTITY));
+            byte[] imageByteArray = cursor.getBlob(cursor.getColumnIndex(OrderContract.OrderEntry.COLUMN_IMAGE));
             name.setText(cName);
             price.setText(cPrice);
             quantity.setText(cAvail);
             supplierName.setText(sName);
             supplierEmail.setText(sEmail);
             supplierPhone.setText(sPhone);
-
+//            Bitmap bmp = BitmapFactory.decodeByteArray(imageByteArray, 0, imageByteArray.length);
+//            productLooks.setImageBitmap(bmp);
             //images were the most difficult part
-            path = cursor.getString(cursor.getColumnIndex(OrderContract.OrderEntry.COLUMN_IMAGE));
-            try {
-                ContentResolver cr = getContentResolver();
-                Uri uri = Uri.parse(path);
- //               Bitmap bitmap = MediaStore.Images.Media.getBitmap(cr, Uri.parse(path));
- //               InputStream is = getContentResolver().openInputStream(uri);
-//                Bitmap bitmap = BitmapFactory.decodeStream(is);
-                Bitmap _bit = BitmapFactory.decodeStream(
-                        getContentResolver().openInputStream(uri),null,null);
-                //productLooks.setImageBitmap(bitmap);
-            }
-            catch (Exception e){
-                Log.e("Image", path);
-                e.printStackTrace();
-            }
+//            path = cursor.getString(cursor.getColumnIndex(OrderContract.OrderEntry.COLUMN_IMAGE));
+//            try {
+//                ContentResolver cr = getContentResolver();
+//                Uri uri = Uri.parse(path);
+// //               Bitmap bitmap = MediaStore.Images.Media.getBitmap(cr, Uri.parse(path));
+// //               InputStream is = getContentResolver().openInputStream(uri);
+////                Bitmap bitmap = BitmapFactory.decodeStream(is);
+//                Bitmap _bit = BitmapFactory.decodeStream(
+//                        getContentResolver().openInputStream(uri),null,null);
+//                //productLooks.setImageBitmap(bitmap);
+//            }
+//            catch (Exception e){
+//                Log.e("Image", path);
+//                e.printStackTrace();
+//            }
         }
         asc.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -257,6 +260,17 @@ public class EditorActivity extends AppCompatActivity {
         values.put(OrderContract.OrderEntry.COLUMN_SUPPLIER_NAME, supplierName.getText().toString());
         values.put(OrderContract.OrderEntry.COLUMN_SUPPLIER_PHONE, supplierPhone.getText().toString());
         values.put(OrderContract.OrderEntry.COLUMN_IMAGE , path );
+        if(productLooks.getDrawable() == null) {
+            Toast.makeText(this,"You must upload an image.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        Bitmap imageBitMap = ((BitmapDrawable)productLooks.getDrawable()).getBitmap();
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        imageBitMap.compress(Bitmap.CompressFormat.PNG, 100, bos);
+        byte[] imageByteArray = bos.toByteArray();
+
+        values.put(OrderContract.OrderEntry.COLUMN_IMAGE, imageByteArray);
         if(!whichMethodToCall) { //add
 
             Uri uri = getContentResolver().insert(OrderContract.OrderEntry.ORDERS_URI, values);
@@ -321,8 +335,8 @@ public class EditorActivity extends AppCompatActivity {
                 try {
                     Uri imageUri = data.getData();
 
-                    path = imageUri.toString();
-                    Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), Uri.parse(path));
+                   // path = imageUri.toString();
+                    Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), imageUri);
                     productLooks.setImageBitmap(bitmap);
                     Log.e("hey", " " + path);
                 } catch (Exception e) {

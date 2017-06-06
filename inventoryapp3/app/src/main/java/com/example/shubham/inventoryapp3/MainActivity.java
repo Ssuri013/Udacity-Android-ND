@@ -41,7 +41,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         View emptyView = findViewById(R.id.empty_view);
         lv.setEmptyView(emptyView);
 
-
         mCursorAdapter = new OrderCursorAdapter(this,null);
 
         Log.e("on itemClick","created");
@@ -148,7 +147,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         values.put(OrderEntry.COLUMN_SUPPLIER_NAME, "shubham");
         values.put(OrderEntry.COLUMN_SUPPLIER_PHONE, "9041908421");
         getContentResolver().insert(OrderEntry.ORDERS_URI, values);
-
+//s
     }
 
 }

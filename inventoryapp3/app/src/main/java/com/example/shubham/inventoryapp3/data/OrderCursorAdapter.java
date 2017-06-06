@@ -48,7 +48,7 @@ public class OrderCursorAdapter extends CursorAdapter {
         String name = cursor.getString(cursor.getColumnIndex(OrderContract.OrderEntry.COLUMN_NAME));
         String price = cursor.getString(cursor.getColumnIndex(OrderContract.OrderEntry.COLUMN_PRICE));
         String avail =  cursor.getString(cursor.getColumnIndex(OrderContract.OrderEntry.COLUMN_QUANTITY));
-        String path = cursor.getString(cursor.getColumnIndex(OrderContract.OrderEntry.COLUMN_IMAGE));
+       // String path = cursor.getString(cursor.getColumnIndex(OrderContract.OrderEntry.COLUMN_IMAGE));
         final int productId = cursor.getInt(cursor.getColumnIndex(OrderContract.OrderEntry._ID));
         final int count = cursor.getInt(cursor.getColumnIndex(OrderContract.OrderEntry.COLUMN_QUANTITY));
         //Bitmap bmp = BitmapFactory.decodeByteArray(imageByteArray, 0, imageByteArray.length);
