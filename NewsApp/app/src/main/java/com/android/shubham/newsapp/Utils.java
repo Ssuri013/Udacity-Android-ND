@@ -14,10 +14,6 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-/**
- * Created by shubham on 06-Jun-17.
- */
-
 public class Utils {
     final static String BASE_URL = " https://content.guardianapis.com/search?";
     //search is type here , we also have tag and section
@@ -44,47 +40,41 @@ public class Utils {
             //get inputStream and convert to string
             Scanner sc = new Scanner(conn.getInputStream()).useDelimiter("//A");
             String jsonResponse = sc.hasNext()? sc.next() : null;
-           // Log.e("jsonResponse", jsonResponse);
-            data = jsonParseer(jsonResponse);
-
+            // Log.e("jsonResponse", jsonResponse);
+            data = jsonParser(jsonResponse);
         }
         catch (MalformedURLException e){
             Log.e("utils", "url malformed");
         }
         catch(IOException io){
-            Log.e("utils", "IO exception");
+            Log.e("utils", "openconnection or inputstream");
         }
         finally {
-        conn.disconnect();
+            conn.disconnect();
         }
         return data;
     }
 
-
-    static ArrayList<NewsData> jsonParseer(String str)  {
+    static ArrayList<NewsData> jsonParser(String str)  {
         ArrayList<NewsData> data = new ArrayList<>();
         try {
-            Log.e("0","0");
             JSONObject jo = new JSONObject(str);
             jo = jo.getJSONObject("response");
             JSONArray ja = jo.getJSONArray("results");
-            Log.e("1","1");
+            //object -> response -> results -> iterate each element
             for(int i=0; i< ja.length(); i++){
                 jo = ja.getJSONObject(i);
-                Log.e("2","2");
                 String title = jo.getString("webTitle");
                 String url = jo.getString("webUrl");
                 String sec = jo.getString("sectionName");
                 data.add( new NewsData(title, sec, url) );
+                //adding NewsData object to arraylist
             }
             return data;
         }
         catch(JSONException je){
             Log.e("utils", "jsonerror");
-
         }
         return null;
     }
-
-
 }

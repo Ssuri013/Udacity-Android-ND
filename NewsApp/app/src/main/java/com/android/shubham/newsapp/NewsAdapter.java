@@ -22,28 +22,26 @@ public class NewsAdapter extends ArrayAdapter<NewsData> {
     NewsAdapter(Context context)//, ArrayList<NewsData> al){
     {
         super(context, 0, new ArrayList<NewsData>());
-        //super(context, 0, al);
     }
 
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         View listItemView = convertView;
+        //new created
         if (listItemView == null) {
             listItemView = LayoutInflater.from(getContext()).inflate(
                     R.layout.list_item, parent, false);
         }
+        NewsData currentArticle = getItem(position);
 
-        final NewsData currentArticle = getItem(position);
-
+        //fetch view
         TextView tv1 = (TextView) listItemView.findViewById(R.id.title);
         TextView tv2 = (TextView) listItemView.findViewById(R.id.section);
 
+        //fill view
         tv1.setText( currentArticle.getTitle());
         tv2.setText( currentArticle.getCategory());
-
-
-
 
         return listItemView;
     }

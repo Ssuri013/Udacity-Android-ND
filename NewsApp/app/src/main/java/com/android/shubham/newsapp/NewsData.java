@@ -5,7 +5,7 @@ package com.android.shubham.newsapp;
  */
 
 public class NewsData {
-
+//once created , object is not modifiable
     private String title;
     private String section;
     private String url;
